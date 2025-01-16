@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="script.js" defer></script>
+
+        <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    </head>
+    <body>
+
+        <!-- Sign-up form start -->
+
+        <main class="component">
+
+            <section class="component__image"></section>
+
+            <section class="component__signIn">
+                <h1 class="component__signIn__title">Stay updated!</h1>
+
+                <p class="component__signIn__content">Join 60,000+ product managers receiving monthly updates on:</p>
+
+                <ul class="component__signIn__list">
+                    <li class="component__signIn__list__element"><img src="assets/images/icon-list.svg" alt=""><span>Product discovery and building what matters</span></li>
+                    <li class="component__signIn__list__element"><img src="assets/images/icon-list.svg" alt=""><span>Measuring to ensure updates are a success</span></li>
+                    <li class="component__signIn__list__element"><img src="assets/images/icon-list.svg" alt=""><span>And much more!</span></li>
+                </ul>
+
+                <form class="component__signIn__form" method="GET" action="">
+                    <div>
+                        <label for="email">Email address</label>
+                        <span class="none">Valid email required</span>
+                    </div>
+                    <input class="component__signIn__form__input" id="email" type="email" placeholder="email@company.com" name="email" required>
+
+                    <input type="submit" value="Subscribe to monthly newsletter" class="component__signIn__form__button button">
+                </form>
+
+            </section>
+
+        </main>
+
+        <!-- Sign-up form end -->
+
+        <!-- Success message start -->
+
+        <div class="popupConfirmation none">
+            <img class="popupConfirmation__image" src="assets/images/icon-success.svg" alt="success">
+
+            <h1 class="popupConfirmation__title">Thanks for subscribing!</h1>
+
+            <p class="popupConfirmation__content">
+                A confirmation email has been sent to <strong></strong>.
+                Please open it and click the button inside to confirm your subscription.
+            </p>
+
+            <button class="popupConfirmation__button button">Dismiss message</button>
+        </div>
+
+        <!-- Success message end -->
+
+        <footer class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/chanwinharold" target="_blank">chanwinharold</a>.
+        </footer>
+    </body>
+</html>

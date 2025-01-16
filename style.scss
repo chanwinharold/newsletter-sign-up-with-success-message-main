@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Variables
+$bodyBgColor: hsl(234, 29%, 20%);
+$componentBgColor: hsl(0, 0%, 100%);
+$buttonBgColor: hsl(235, 18%, 26%);
+$buttonHoverBgColor: hsl(4, 100%, 67%);
+$allTxColor: hsl(231, 7%, 60%);
+
+// Mixin
+@mixin flexbox($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+* { margin: 0; }
+
+body {
+    min-height: 100vh;
+    @include flexbox(column, center, center);
+
+    font-family: Roboto, sans-serif;
+    background-color: $bodyBgColor;
+
+}
+
+.component {
+    //display: none;
+
+
+    border-radius: 18px;
+    background-color: $componentBgColor;
+    @media screen and (max-width: 768px) {
+        max-width: 375px;
+        @include flexbox(column, center, center);
+    }
+    @media screen and (min-width: 768px) {
+        min-width: 875px;
+        min-height: 50vh;
+        margin: 2rem;
+        @include flexbox(row-reverse, center, center);
+    }
+
+    &__image {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            height: 250px;
+            border-radius: 0 0 18px 18px;
+            background: url("assets/images/illustration-sign-up-mobile.svg") no-repeat center;
+        }
+        @media screen and (min-width: 768px) {
+            width: 50%;
+            height: 500px;
+            margin: 15px;
+            border-radius: 18px;
+            background: url("assets/images/illustration-sign-up-desktop.svg") no-repeat center;
+        }
+    }
+
+    &__signIn {
+        min-height: 400px;
+        @include flexbox(column, flex-start, flex-start);
+        gap: 30px;
+
+        @media screen and (max-width: 768px) {
+            padding: 2rem;
+        }
+        @media screen and (min-width: 768px) {
+            padding: 3rem;
+        }
+
+        &__title {
+
+            @media screen and (max-width: 768px) {
+                font-size: 2em;
+            }
+            @media screen and (min-width: 768px) {
+                font-size: 3em;
+            }
+        }
+        &__content {
+
+        }
+        &__list {
+            @include flexbox(column, center, flex-start);
+            gap: 15px;
+            padding-left: 0;
+            &__element {
+                list-style: none outside;
+                @include flexbox(row, center, center);
+                gap: 20px;
+            }
+        }
+        &__form {
+            width: 100%;
+            @include flexbox(column, center, flex-start);
+            gap: 15px;
+
+
+            div {
+                width: inherit;
+                @include flexbox(row, space-between, center);
+                gap: 15px;
+                font-size: 0.8em;
+                font-weight: 700;
+
+                span {
+                    color: rgba(255, 0, 0, 0.5);
+                }
+            }
+            &__input {
+                width: inherit;
+                height: 40px;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                border-radius: 5px;
+
+            }
+        }
+    }
+}
+
+.popupConfirmation {
+
+    padding: 2rem;
+    gap: 15px;
+    background-color: $componentBgColor;
+    @media screen and (max-width: 375px) {
+        height: 100vh;
+        @include flexbox(column, center, flex-start);
+        &__button {
+            min-width: 100%;
+            margin-top: 5rem;
+            align-self: center;
+        }
+    }
+    @media screen and (min-width: 375px) {
+        width: 325px;
+        height: 325px;
+        @include flexbox(column, flex-start, flex-start);
+        border-radius: 18px;
+    }
+
+    &__title {
+        font-size: 2.5em;
+    }
+}
+
+
+.none {
+    display: none;
+}
+.active {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: rgba(255, 0, 0, 0.8);
+}
+
+.button {
+    width: inherit;
+    height: 40px;
+    font-weight: 700;
+    color: white;
+    border-radius: 5px;
+    background-color: $buttonBgColor;
+    border: none;
+
+    &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background: rgb(255,98,87);
+        background: linear-gradient(160deg, rgba(255,98,87,1) 65%, rgba(255,164,0,0.927608543417367) 100%);
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; a { color: hsl(228, 45%, 44%); } }
